@@ -17,9 +17,9 @@ radius1_slider .addEventListener( 'touchend', onSliderChange, false )
 const radius2_slider = document.getElementById( 'radius2' )
 radius2_slider .addEventListener( 'mouseup', onSliderChange, false )
 radius2_slider .addEventListener( 'touchend', onSliderChange, false )
-const nofloors_slider = document.getElementById( 'nofloors' )
-nofloors_slider .addEventListener( 'mouseup', onSliderChange, false )
-nofloors_slider .addEventListener( 'touchend', onSliderChange, false )
+const floors_slider = document.getElementById( 'floors' )
+floors_slider .addEventListener( 'mouseup', onSliderChange, false )
+floors_slider .addEventListener( 'touchend', onSliderChange, false )
 const rotation_slider = document.getElementById( 'rotation' )
 rotation_slider .addEventListener( 'mouseup', onSliderChange, false )
 rotation_slider .addEventListener( 'touchend', onSliderChange, false )
@@ -45,7 +45,7 @@ async function compute(){
     inputs: {
       'radius1': height_slider.valueAsNumber,
       'radius2': height_slider.valueAsNumber,
-      'nofloors': height_slider.valueAsNumber,
+      'floors': height_slider.valueAsNumber,
       'rotation': height_slider.valueAsNumber
     }
   }
