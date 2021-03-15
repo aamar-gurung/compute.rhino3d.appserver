@@ -11,18 +11,18 @@ loader.setLibraryPath( 'https://cdn.jsdelivr.net/npm/rhino3dm@0.15.0-beta/' )
 const definition = 'Rotate.gh'
 
 // setup input change events
-const count_slider = document.getElementById( 'radius1' )
-height_slider .addEventListener( 'mouseup', onSliderChange, false )
-height_slider .addEventListener( 'touchend', onSliderChange, false )
-const count_slider = document.getElementById( 'radius2' )
-height_slider .addEventListener( 'mouseup', onSliderChange, false )
-height_slider .addEventListener( 'touchend', onSliderChange, false )
-const count_slider = document.getElementById( 'no.floor' )
-height_slider .addEventListener( 'mouseup', onSliderChange, false )
-height_slider .addEventListener( 'touchend', onSliderChange, false )
-const count_slider = document.getElementById( 'rotation' )
-height_slider .addEventListener( 'mouseup', onSliderChange, false )
-height_slider .addEventListener( 'touchend', onSliderChange, false )
+const radius1_slider = document.getElementById( 'radius1' )
+radius1_slider .addEventListener( 'mouseup', onSliderChange, false )
+radius1_slider .addEventListener( 'touchend', onSliderChange, false )
+const radius2_slider = document.getElementById( 'radius2' )
+radius2_slider .addEventListener( 'mouseup', onSliderChange, false )
+radius2_slider .addEventListener( 'touchend', onSliderChange, false )
+const nofloors_slider = document.getElementById( 'nofloors' )
+nofloors_slider .addEventListener( 'mouseup', onSliderChange, false )
+nofloors_slider .addEventListener( 'touchend', onSliderChange, false )
+const rotation_slider = document.getElementById( 'rotation' )
+rotation_slider .addEventListener( 'mouseup', onSliderChange, false )
+rotation_slider .addEventListener( 'touchend', onSliderChange, false )
 
 let rhino, doc
 
@@ -45,7 +45,7 @@ async function compute(){
     inputs: {
       'radius1': height_slider.valueAsNumber,
       'radius2': height_slider.valueAsNumber,
-      'no.floors': height_slider.valueAsNumber,
+      'nofloors': height_slider.valueAsNumber,
       'rotation': height_slider.valueAsNumber
     }
   }
