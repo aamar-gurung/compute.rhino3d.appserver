@@ -43,10 +43,10 @@ async function compute(){
   const data = {
     definition: definition,
     inputs: {
-      'radius1': height_slider.valueAsNumber,
-      'radius2': height_slider.valueAsNumber,
-      'floors': height_slider.valueAsNumber,
-      'rotation': height_slider.valueAsNumber
+      'radius1': radius1_slider.valueAsNumber,
+      'radius2': radius2_slider.valueAsNumber,
+      'floors': floors_slider.valueAsNumber,
+      'rotation': rotation_slider.valueAsNumber
     }
   }
 

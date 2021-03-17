@@ -8,15 +8,12 @@ import rhino3dm from 'https://cdn.jsdelivr.net/npm/rhino3dm@0.15.0-beta/rhino3dm
 const loader = new Rhino3dmLoader()
 loader.setLibraryPath( 'https://cdn.jsdelivr.net/npm/rhino3dm@0.15.0-beta/' )
 
-const definition = 'Rotate_rainbow.gh'
+const definition = 'Rotaterainbow.gh'
 
 // setup input change events
-const radius1_slider = document.getElementById( 'radius1' )
-radius1_slider .addEventListener( 'mouseup', onSliderChange, false )
-radius1_slider .addEventListener( 'touchend', onSliderChange, false )
-const radius2_slider = document.getElementById( 'radius2' )
-radius2_slider .addEventListener( 'mouseup', onSliderChange, false )
-radius2_slider .addEventListener( 'touchend', onSliderChange, false )
+const radius_slider = document.getElementById( 'radius' )
+radius_slider .addEventListener( 'mouseup', onSliderChange, false )
+radius_slider .addEventListener( 'touchend', onSliderChange, false )
 const floors_slider = document.getElementById( 'floors' )
 floors_slider .addEventListener( 'mouseup', onSliderChange, false )
 floors_slider .addEventListener( 'touchend', onSliderChange, false )
@@ -43,8 +40,7 @@ async function compute(){
   const data = {
     definition: definition,
     inputs: {
-      'radius1': radius1_slider.valueAsNumber,
-      'radius2': radius2_slider.valueAsNumber,
+      'radius': radius_slider.valueAsNumber,
       'floors': floors_slider.valueAsNumber,
       'rotation': rotation_slider.valueAsNumber
     }
