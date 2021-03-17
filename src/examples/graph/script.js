@@ -15,6 +15,9 @@ const definition = 'graph.gh'
 const height_slider = document.getElementById( 'height' )
 height_slider.addEventListener( 'mouseup', onSliderChange, false )
 height_slider.addEventListener( 'touchend', onSliderChange, false )
+const dimension_slider = document.getElementById( 'dimension' )
+dimension_slider.addEventListener( 'mouseup', onSliderChange, false )
+dimension_slider.addEventListener( 'touchend', onSliderChange, false )
 
 let points = []
 
@@ -33,8 +36,8 @@ function rndPts() {
   // generate random points
 
   const cntPts = 7
-  //const bndX = dimension_slider.valueAsNumber / 2
-  //const bndY = dimension_slider.valueAsNumber / 2
+  const bndX = dimension_slider.valueAsNumber / 2
+  const bndY = dimension_slider.valueAsNumber / 2
 
   for (let i = 0; i < cntPts; i++) {
     const x = Math.random() * (bndX - -bndX) + -bndX
@@ -102,6 +105,7 @@ async function compute () {
     definition: definition,
     inputs: {
       'height': height_slider.valueAsNumber,
+      'dimension': dimension_slider.valueAsNumber,
       'points': points
     }
   }
