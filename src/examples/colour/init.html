@@ -31,11 +31,11 @@
                 // The min, max, and step values below should match the values used for the input sliders in index.html
 
                 //floors
-                params.count = {}
-                params.count.min = 1
-                params.count.max = 20
-                params.count.step = 1
-                params.count.cnt = ( params.count.max - params.count.min ) / params.count.step
+                params.floors = {}
+                params.floors.min = 1
+                params.floors.max = 20
+                params.floors.step = 1
+                params.floors.cnt = ( params.floors.max - params.floors.min ) / params.floors.step
 
                 //radius
                 params.radius = {}
@@ -45,13 +45,13 @@
                 params.radius.cnt = ( params.radius.max - params.radius.min ) / params.radius.step
 
                 //rotation
-                params.length = {}
-                params.length.min = 1
-                params.length.max = 10
-                params.length.step = 1
-                params.length.cnt = ( params.length.max - params.length.min ) / params.length.step
+                params.rotation = {}
+                params.rotation.min = 1
+                params.rotation.max = 10
+                params.rotation.step = 1
+                params.rotation.cnt = ( params.rotation.max - params.rotation.min ) / params.rotation.step
 
-                total = ( ( params.count.cnt + 1 ) * ( params.radius.cnt + 1 ) * ( params.length.cnt + 1 ) )
+                total = ( ( params.floors.cnt + 1 ) * ( params.radius.cnt + 1 ) * ( params.rotation.cnt + 1 ) )
 
                 logDiv.textContent = 'Solutions to solve: ' + total
 
@@ -71,15 +71,15 @@
 
                 let cnt = 1
 
-                for (let i = params.count.min; i <= params.count.max; i = i + params.count.step) {
+                for (let i = params.floors.min; i <= params.floors.max; i = i + params.floors.step) {
 
                     for (let j = params.radius.min; j <= params.radius.max; j = j + params.radius.step) {
                     
-                        for (let k = params.length.min; k <= params.length.max; k = k + params.length.step) {
+                        for (let k = params.rotation.min; k <= params.rotation.max; k = k + params.rotation.step) {
 
                             console.log(`Solution: ${cnt} / ${total}`)
                             logDiv.textContent = `Solution: ${cnt} / ${total}`
-                            console.log(`Params: Count ${i} - Radius ${j} - Length ${k}`)
+                            console.log(`Params: floors ${i} - radius ${j} - rotation ${k}`)
 
                             let data = {}
                             data.definition = params.definition
